@@ -8,20 +8,20 @@ class Negociacao {
       Object.freeze(this)
     }
 
-    get Volume(){
+    get volume(){
 
       return this._quantidade * this.valor; // calcula o volume da negociação.
     }
 
-    get Data(){
-      return this._data;
+    get data(){
+      return new Date(this._data.getTime());
     }
 
-    get Quantidade(){
+    get quantidade(){
       return this._quantidade;
     }
 
-    get Valor(){
+    get valor(){
       return this._valor;
     }
   }

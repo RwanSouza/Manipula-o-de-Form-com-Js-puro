@@ -9,7 +9,7 @@ class NegociacaoController {
       this._negociacoesView= new NegociacoesView(document.querySelector('#negociacoesView'));
 
 
-      this._negociacoesView.update();
+      this._negociacoesView.update(this._listaNegociacoes);
     }
 
     adiciona(event){
@@ -17,6 +17,7 @@ class NegociacaoController {
       event.preventDefault();
       
       this._listaNegociacoes.adiciona(this._criaNegociacao());
+      this._negociacoesView.update(this._listaNegociacoes);
       this._limpaFormulario();
       console.log(this._listaNegociacoes.negociacoes)
     }
